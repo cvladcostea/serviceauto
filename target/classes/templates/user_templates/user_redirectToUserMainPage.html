@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	>
+<head>
+<title>Service Auto</title>
+</head>
+	<div th:replace="/fragments/header_user"></div>
+
+
+<body>
+	<br>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>	
+	<br>
+	
+	<h1 th:inline="text">Bine ai venit 
+		[[${#httpServletRequest.remoteUser}]]!</h1>
+
+
+
+	<br />
+
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" />
+	</form>
+	
+	<div layout:fragment="content"></div>
+</body>
+</html>

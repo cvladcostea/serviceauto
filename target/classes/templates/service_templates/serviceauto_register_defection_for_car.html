@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Service Auto</title>
+</head>
+<body>
+	<div th:replace="/fragments/header_admin"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div layout:fragment="content_admin">
+		<form th:object="${defection}"
+			th:action="@{/serviceauto/defection/register/{carId}(carId=${carId})}"
+			action="#" method="post">
+
+
+
+
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text" th:field="*{description}" class="form-control"
+				placeholder="Description" />
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text" th:field="*{appointmentData}" class="form-control"
+				placeholder="Appointment Data" />
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" class="btn btn-danger pull-right" value="Add">
+		</form>
+	</div>
+
+</body>
+</html>
+
+
+
+</script>

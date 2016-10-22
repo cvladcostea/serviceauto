@@ -1,0 +1,46 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Service Auto</title>
+</head>
+<body>
+	<div th:replace="/fragments/header_user"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div layout:fragment="content_user">
+		<form th:object="${defectionUpdate}"
+			th:action="@{/serviceauto/user/car/defection/update/{defectionId}(defectionId=${defectionId})}"
+			action="#" method="post">
+
+
+
+
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text" th:field="*{description}" class="form-control"
+				placeholder="Description" />
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="text" th:field="*{appointmentData}" class="form-control"
+				placeholder="Appointment Data" />
+
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<input type="submit" class="btn btn-danger pull-right" value="Update Defection">
+		</form>
+			<form th:object="${carUpdate}"
+			th:action="@{/serviceauto/user/car/defection/delete/{defectionId}(defectionId=${defectionId})}"
+			action="#" method="post">
+			<input type="submit" class="btn btn-danger pull-middle"
+				value="Delete Defection">
+		</form>
+	</div>
+
+</body>
+</html>
+
+

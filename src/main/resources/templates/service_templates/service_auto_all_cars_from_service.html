@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout_admin">
+<head>
+<title>Service Auto Application</title>
+</head>
+<body>
+	<div layout:fragment="content">
+
+		<div class="row" style="margin-bottom: 50px;">
+			<div class="col-md-offset-2 col-md-8">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">All Cars</h3>
+					</div>
+					<div class="panel-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="btn-success">
+									<th>brand</th>
+									<th>model</th>
+									<th>Manufacture Year</th>
+									<th>Operation</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${#lists.isEmpty(allCars)}" class="btn-warning">
+									<td colspan="4" align="center">No Users for user in
+										service yet !!!</td>
+								</tr>
+								<tr th:each="car : ${allCars}">
+									<td th:text="${car.brand}"></td>
+									<td th:text="${car.model}"></td>
+									<td th:text="${car.manufactureYear}"></td>
+									<td align="center"><a
+										th:href="@{/serviceauto/defection/{carId}(carId=${car.id})}">
+											<span class="glyphicon glyphicon-edit"></span> Defection
+											List.
+									</a> <a
+										th:href="@{/serviceauto/defection/register/{carId}(carId=${car.id})}">
+											<span class="glyphicon glyphicon-edit"></span> Register
+											Defection
+									</a> <a th:href="@{/serviceauto/car/op/{carId}(carId=${car.id})}">
+											<span class="glyphicon glyphicon-edit"></span> Update/Delete
+									</a>&nbsp; &nbsp;</td>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
